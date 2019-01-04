@@ -8,6 +8,12 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+/**
+ * {@link MyAppConfiguration}
+ * @author anurag
+ * 
+ * This is a configuration class where declared for auto enable web MVC and Auto Spring component scan.
+*/
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.anurag.spring")
