@@ -8,16 +8,7 @@
 		<!-- SQL Dialect -->
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 
-		<!-- Database Connection Settings -->
-		
-		<!-- online database connection properties
-		
-		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql://www.db4free.net:3306/anu_test1</property>
-		<property name="hibernate.connection.username">anurag_root</property>
-		<property name="hibernate.connection.password">diatm08_11</property>
- 		-->
-
+		 
 		<!-- local database connection properties -->
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/TestDatabase</property>
