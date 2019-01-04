@@ -1,0 +1,24 @@
+Instruction to run this application.
+
+Step1- checkout from git repo (https://github.com/anukumarrag/SpringRestThreadSafe.git)
+Step2- open it on eclipse and update project using (Maven -> update project)
+step 3- change database connection paramete (like url, user, password, schema name in url ) in hibernate.cfg.xml. 
+Step-4- Run the application on server (	Run As -> Run on Server)
+Step-5 - open url http://localhost:8080/SpringRestApi/doIncrement  (if server is running on other port(8080) then change accordingly in url) 
+Step 6-  open jmeter and open "springRestApiTest.jmx". (File -> open and choose "springRestApiTest.jmx" )
+Step -7  After loaded successfully then click on Home Page (inside jmeter project) and verify port no and protocol(http/https). For me, it's http and 8080.
+Step-8 click on start button.
+Step-9 for testing you can hit again this url (http://localhost:8080/SpringRestApi/doIncrement) on browser and verify the result.
+
+
+
+
+ Create table query-
+ 
+ 
+ CREATE TABLE `ID_GENERATOR` (
+  `ID` int(11) NOT NULL,
+  `number` int(11) DEFAULT NULL,
+  `version` int(11) NOT NULL,
+  PRIMARY KEY (`ID`)
+);
