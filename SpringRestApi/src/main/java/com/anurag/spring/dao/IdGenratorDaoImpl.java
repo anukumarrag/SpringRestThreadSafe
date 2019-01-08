@@ -1,5 +1,6 @@
 package com.anurag.spring.dao;
 
+import org.hibernate.LockOptions;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,8 @@ public class IdGenratorDaoImpl implements IdGeneratorDao {
 			
 			session.beginTransaction();
 			 
-			IdGenerator idg = (IdGenerator) session.get(IdGenerator.class, 1);
+			IdGenerator idg = (IdGenerator) session.get(IdGenerator.class, 1,LockOptions.UPGRADE);
+			
 			idg.setNumber(idg.getNumber() + 1);
 			idg = (IdGenerator) session.merge(idg);
 			data = idg.getNumber();
@@ -39,9 +41,10 @@ public class IdGenratorDaoImpl implements IdGeneratorDao {
 		} catch (org.hibernate.StaleObjectStateException e) {
 			 session.getTransaction().rollback();
 			throw e;
-		}catch (Exception e) {
-			throw e;
 		}
+		catch (Exception e) {
+			throw e;
+		} 
 
 		return data;
 
